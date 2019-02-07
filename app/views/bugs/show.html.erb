@@ -6,6 +6,11 @@
 </p>
 
 <p>
+  <strong>User:</strong>
+  <%= (@bug.user.try(:lname)) || "NA" %>
+</p>
+
+<p>
   <strong>Description:</strong>
   <%= @bug.description %>
 </p>

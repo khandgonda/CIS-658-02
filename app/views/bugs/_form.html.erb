@@ -36,6 +36,13 @@
     <%= form.select :status, Bug.statuses.keys, selected: @bug.status %>
   </div>
 
+  <div class="field">
+    <%= form.label :user_id %>
+    <%= form.select :user_id,
+    options_for_select(User.all.collect {|u| ["#{u.lname},#{u.fname}", u.id]},
+    selected: (@bug.user ? @bug.user.id : User.first.id)), {} %>
+
+  </div>
   <div class="actions">
     <%= form.submit %>
   </div>
