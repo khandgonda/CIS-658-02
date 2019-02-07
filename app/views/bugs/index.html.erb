@@ -18,12 +18,12 @@
   <tbody>
     <% @bugs.each do |bug| %>
       <tr>
+        <td><%= (bug.user.try(:lname)) || "NA" %></td>
         <td><%= bug.title %></td>
         <td><%= bug.description %></td>
         <td><%= bug.issue_type %></td>
         <td><%= bug.priority %></td>
         <td><%= bug.status %></td>
-        <td><%= (bug.user.try(:lname)) || "NA" %></td>
         <td><%= link_to 'Show', bug %></td>
         <td><%= link_to 'Edit', edit_bug_path(bug) %></td>
         <td><%= link_to 'Destroy', bug, method: :delete, data: { confirm: 'Are you sure?' } %></td>
