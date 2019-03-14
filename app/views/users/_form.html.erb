@@ -11,27 +11,29 @@
     </div>
   <% end %>
 
-  <div class="field">
-    <%= form.label :fname %>
-    <%= form.text_field :fname %>
+  <div class="form-group">
+    <%= form.label :fname , "First Name" %>
+    <%= form.text_field :fname, id: :author_fname, class: "form-control" %>
+  </div>
+
+  <div class="form-group">
+    <%= form.label :lname, "Last Name" %>
+    <%= form.text_field :lname, id: :author_lname, class: "form-control" %>
+  </div>
+
+  <div class="form-group">
+    <%= form.label :email, "Email" %>
+    <%= form.text_field :email, id: :author_email, class: "form-control" %>
   </div>
 
   <div class="field">
-    <%= form.label :lname %>
-    <%= form.text_field :lname %>
-  </div>
-
-  <div class="field">
-    <%= form.label :email %>
-    <%= form.text_field :email %>
-  </div>
-
-  <div class="field">
-    <%= form.label :thumbnail %>
-    <%= form.text_field :thumbnail %>
+    <%= form.label :thumbnail, "Profile Image" %>
+    <%= form.text_field :thumbnail, id: :author_thumbnail, class: "form-control-file" %>
   </div>
 
   <div class="actions">
-    <%= form.submit %>
+    <%= form.submit class: "btn btn-primary" %>
+    <%= link_to 'Cancel', users_path, class: "btn btn-danger" %>
+    
   </div>
 <% end %>
