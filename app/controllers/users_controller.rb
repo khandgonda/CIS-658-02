@@ -3,9 +3,17 @@ class UsersController < ApplicationController
 
   # GET /users
   # GET /users.json
+  # def index
+  #   @users = User.all
+  # end
   def index
-    @users = User.all
-  end
+ @users = User.all
+ respond_to do |format|
+ format.html {render :index}
+ format.json {render :index, status: :ok}
+ format.xml {render xml: @users.as_json}
+ end
+end
 
   # GET /users/1
   # GET /users/1.json
